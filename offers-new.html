@@ -8,6 +8,8 @@
         <meta name="author" content="" />
         <title>New Offers - Offer Creation</title>
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://formden.com/static/cdn/bootstrap-iso.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -200,7 +202,7 @@
                                         <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                     </div>
                                 </div>
-                                <div class="col-md-1 align-self-end"><input class="btn btn-primary btn-offer-predict" type="button" value="Create / Edit" /></div>
+                                <div class="col-md-1 align-self-end"><input class="btn btn-primary btn-offer-predict" type="button" value="Create / Edit" data-bs-toggle="modal" data-bs-target="#scheduleCreateModal" /></div>
                                 <div class="col-md-1">
                                     <label class="form-label">Repeat weekly</label>
                                     <div class="form-check form-switch">
@@ -259,6 +261,7 @@ and more background data</textarea
                             </form>
                         </div>
                     </div>
+                    <!-- Bundle creation modal           -->
                     <div class="modal fade" tabindex="-1" aria-labelledby="bundleCreateModalLabel" aria-hidden="true" id="bundleCreateModal">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -299,6 +302,51 @@ and more background data</textarea
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-primary">Predict</button>
                                     <button type="button" class="btn btn-success" data-bs-dismiss="modal">Create</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- schedule creation modal           -->
+                    <div class="modal fade" tabindex="-1" aria-labelledby="scheduleCreateModalLabel" aria-hidden="true" id="scheduleCreateModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Create schedule</h5>
+                                    <input class="btn btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                                </div>
+                                <div class="modal-body">
+                                    <row>
+                                        <form class="row g-3">
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <input class="form-control" disabled value="10/15/2022 00:00 - 10/22/2022 23:00" />
+                                                    <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <button type="button" class="btn btn-primary btn-offer-predict"><i class="fas fa-plus"></i></button>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-minus"></i></button>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <div class="input-group">
+                                                    <input class="form-control" disabled value="11/15/2022 00:00 - 11/22/2022 23:00" />
+                                                    <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <button type="button" class="btn btn-primary btn-offer-predict"><i class="fas fa-plus"></i></button>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-minus"></i></button>
+                                            </div>
+                                        </form>
+                                    </row>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
                                 </div>
                             </div>
                         </div>
