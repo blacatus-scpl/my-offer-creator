@@ -11720,3 +11720,13 @@ body {
   margin-bottom: 10px !important;
   margin-right: 10px !important;
 }
+
+.add-element-btn {
+  margin-bottom: 10px !important;
+  margin-right: 10px !important;
+  border-radius: 100px;
+}
+
+.cell {
+  margin-left: 5px;
+}
