@@ -39,7 +39,7 @@ block content
                     .form-check.form-switch
                         input.form-check-input(type="checkbox", role="switch")
                         label.form-label Enable
-                
+
                 // Row 3
                 .col-md-2
                     label.form-label Stock
@@ -63,6 +63,12 @@ block content
                         option combo 1
                         option combo 2
                 .col-md-8
+
+                // Datatable
+                .col-md-12
+                    .card.mb-4
+                        .card-body
+                            include includes/bulk-datatable.pug
 
                 // Row 5
                 .col-md-5
@@ -112,13 +118,6 @@ block content
                     label.form-label Image Preview
                     img(src="https://wwechampions.com/static/media/banner.2d4180a4.png" class="img-thumbnail")
 
-
-        // Datatable
-        .row
-            .card.mb-4
-                .card-body
-                    include includes/bulk-datatable.pug
-                
         // Create offer button
         .row
             .col-md-2
