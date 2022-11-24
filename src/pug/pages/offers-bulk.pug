@@ -1,0 +1,220 @@
+extends ../layouts/dashboard.pug
+
+block config
+    - var bodyClass = 'sb-nav-fixed'
+    - var pageTitle = 'Offers Bulk';
+    - var index = true;
+    - var sidenavStyle = 'sb-sidenav-dark'
+    
+prepend css
+    //- Load Simple DataTables Stylesheet
+    link(href='https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css', rel='stylesheet')
+
+block content
+    .container-fluid.px-4
+        include includes/page-header.pug
+        
+        // Common fields
+        .row 
+            form.row.g-3
+                // Row 1
+                .col-md-3
+                    label.form-label Offer ID
+                    input.form-control(value="OFFER_WXYZ_NOV_2022")
+                .col-md-3
+                    label.form-label Platform
+                    select.form-select
+                        option(selected) Web
+                        option Mobile 
+                        option Web, Mobile
+                .col-md-3
+                    label.form-label Gate ID
+                    select.form-select
+                        option(selected) r50_staging
+                        option r45_liveops
+                        option r45_live
+                        option r50_development
+                .col-md-3
+                    label.form-label Global Offer
+                    .form-check.form-switch
+                        input.form-check-input(type="checkbox", role="switch")
+                        label.form-label Enable
+                
+                // Row 3
+                .col-md-2
+                    label.form-label Stock
+                    input.form-control(type="number", min="1", max="10000", value="20")
+                .col-md-2
+                    label.form-label Offer Type
+                    select.form-select
+                        option(selected) Please select an offer type
+                        option type 1
+                        option type 2
+                .col-md-2
+                    label.form-label Offer Weight
+                    input.form-control(value="150")
+                .col-md-2
+                    label.form-label Offer Section
+                    input.form-control(value="Nov 2022 section")
+                .col-md-2
+                    label.form-label Combo Type
+                    select.form-select
+                        option(selected) Please select a combo type
+                        option combo 1
+                        option combo 2
+                .col-md-8
+
+                // Row 5
+                .col-md-5
+                    label.form-label Schedule
+                    .input-group
+                        input.form-control(disabled, value="MM/DD/YYYY HH:MM - MM/DD/YYYY HH:MM")
+                        span.input-group-text
+                            i.fas.fa-calendar
+                .col-md-1.align-self-end
+                    input.btn.btn-primary.btn-offer-predict(type='button', value='Create / Edit', data-bs-toggle="modal" data-bs-target="#scheduleCreateModal")
+                .col-md-1
+                    label.form-label Repeat weekly
+                    .form-check.form-switch
+                        input.form-check-input(type="checkbox", role="switch")
+                        label.form-label Enable
+                .col-md-5
+
+                // Art preview
+                .col-md-6
+                    .row
+                        .col-md-10
+                            label.form-label Store Image ID
+                            input.form-control(value="Nov 2022 section")
+                        .col-md-2.align-self-end
+                            input.btn.btn-primary.btn-offer-predict(type='button', value='Search')
+                    .row 
+                        .form-group(style="margin-top: 12px")
+                            label.form-label Store Image Description
+                            textarea.form-control(rows=4)
+                                | Nov 2022 section
+                                | with description
+                                | and more data
+                    .row
+                        .col-md-10
+                            label.form-label(style="margin-top: 12px") Background Image ID
+                            input.form-control(value="Nov 2022 section")
+                        .col-md-2.align-self-end
+                            input.btn.btn-primary.btn-offer-predict(type='button', value='Search')
+                    .row 
+                        .form-group(style="margin-top: 12px")
+                            label.form-label Background Image Description
+                            textarea.form-control(rows=4)
+                                | My favourite background
+                                | with description
+                                | and more background data
+                .col-md-3
+                    label.form-label Image Preview
+                    img(src="https://wwechampions.com/static/media/banner.2d4180a4.png" class="img-thumbnail")
+
+
+        // Datatable
+        .row
+            .card.mb-4
+                .card-body
+                    include includes/bulk-datatable.pug
+                
+        // Create offer button
+        .row
+            .col-md-2
+                a(href='index.html')
+                    input.btn.btn-success.btn-offer-predict(type='button', value='Create Offer', style="margin-top: 10px; margin-bottom: 10px")
+    // Bundle creation modal           
+    .modal.fade(tabindex="-1", aria-labelledby="bundleCreateModalLabel" aria-hidden="true")#bundleCreateModal
+        .modal-dialog.modal-lg
+            .modal-content 
+                .modal-header
+                    h5.modal-title Create item bundle
+                    input.btn.btn-close(data-bs-dismiss="modal" aria-label="Close")
+                .modal-body
+                    row 
+                        form.row.g-3
+                            .col-md-7
+                                input.form-control(value="Currency ABCDE")
+                            .col-md-3
+                                input.form-control(type="number", min="1", max="10000", value="100")
+                            .col-md-1
+                                <button type="button" class="btn btn-primary btn-offer-predict">
+                                    i.fas.fa-plus
+                                </button>
+                            .col-md-1
+                                <button type="button" class="btn btn-danger btn-offer-predict">
+                                    i.fas.fa-minus
+                                </button>
+                            .col-md-7
+                                input.form-control(value="Item FGHJK")
+                            .col-md-3
+                                input.form-control(type="number", min="1", max="10000", value="1")
+                            .col-md-1
+                                <button type="button" class="btn btn-primary btn-offer-predict">
+                                    i.fas.fa-plus
+                                </button>
+                            .col-md-1
+                                <button type="button" class="btn btn-danger btn-offer-predict">
+                                    i.fas.fa-minus
+                                </button>
+                            .col-md-7
+                                input.form-control(value="Shard LMNOP")
+                            .col-md-3
+                                input.form-control(type="number", min="1", max="10000", value="50")
+                            .col-md-1
+                                <button type="button" class="btn btn-primary btn-offer-predict">
+                                    i.fas.fa-plus
+                                </button>
+                            .col-md-1
+                                <button type="button" class="btn btn-danger btn-offer-predict">
+                                    i.fas.fa-minus
+                                </button>
+                .modal-footer
+                    <button type="button" class="btn btn-primary">Predict</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Create</button>
+
+    // schedule creation modal           
+    .modal.fade(tabindex="-1", aria-labelledby="scheduleCreateModalLabel" aria-hidden="true")#scheduleCreateModal
+        .modal-dialog.modal-lg
+            .modal-content 
+                .modal-header
+                    h5.modal-title Create schedule
+                    input.btn.btn-close(data-bs-dismiss="modal" aria-label="Close")
+                .modal-body
+                    row 
+                        form.row.g-3
+                            .col-md-10
+                                .input-group
+                                    input.form-control(disabled, value="10/15/2022 00:00 - 10/22/2022 23:00")
+                                    .input-group-append
+                                        button.btn.btn-outline-secondary(type="button", id="datePicker", name="datePicker") Edit
+                            .col-md-1
+                                <button type="button" class="btn btn-primary btn-offer-predict">
+                                    i.fas.fa-plus
+                                </button>
+                            .col-md-1
+                                <button type="button" class="btn btn-danger btn-offer-predict">
+                                    i.fas.fa-minus
+                                </button>
+                            .col-md-10
+                                .input-group
+                                    input.form-control(disabled, value="11/15/2022 00:00 - 11/22/2022 23:00")
+                                    .input-group-append
+                                        button.btn.btn-outline-secondary(type="button", id="datePicker", name="datePicker") Edit
+                            .col-md-1
+                                <button type="button" class="btn btn-primary btn-offer-predict">
+                                    i.fas.fa-plus
+                                </button>
+                            .col-md-1
+                                <button type="button" class="btn btn-danger btn-offer-predict">
+                                    i.fas.fa-minus
+                                </button>
+
+                .modal-footer
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>              
+append scripts    
+    //- Load Simple DataTables Scripts
+    script(src='https://cdn.jsdelivr.net/npm/simple-datatables@latest', crossorigin='anonymous')
+    script(src='js/datatables-simple-demo.js')
