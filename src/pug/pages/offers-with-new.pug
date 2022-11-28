@@ -13,17 +13,21 @@ prepend css
 block content
     .container-fluid.px-4
         include includes/page-header.pug
+        include includes/mixins/offers-datatable.pug
+        .row
+            .col
+                a(href='offers-new.html')
+                    input.btn.btn-primary.upper-table-btn(type='button', value='New Offer')
+                a(href='offers-batch.html')
+                    input.btn.btn-secondary.upper-table-btn(type='button', value='Batch Offers')
+            .col-12
+            .col
+                a(href='assets/csvs/offers.csv')
+                    input.btn.btn-success.upper-table-btn(type='button', value='Export Offers')
 
-        a(href='offers-new.html')
-            input.btn.btn-primary.upper-table-btn(type='button', value='New Offer')
-        a(href='offers-bulk.html')
-            input.btn.btn-secondary.upper-table-btn(type='button', value='Bulk Offers')
-        input.btn.btn-success.upper-table-btn(type='button', value='Export Offers')
-
-        .card.mb-4
-            .card-body
-                include includes/offers-with-new-datatable.pug
-
+            .card.mb-4
+                .card-body
+                    +offers-datatable({single: true})
 
 append scripts
     //- Load Simple DataTables Scripts
