@@ -1,0 +1,28 @@
+
+// Bundle creation modal           
+include ../mixins/items-dropdown.pug
+include ../mixins/assets-dropdown.pug
+
+mixin item-bundle(itemID, assetID, value)
+    .col-md-6
+        +items-dropdown(itemID)
+    .col-md-2
+        input.form-control(type="number", min="1", max="10000", value=value)
+    .col-md-4
+        +assets-dropdown(assetID)
+
+.modal.fade(tabindex="-1", aria-labelledby="bundleCreateModalLabel" aria-hidden="true")#bundleCreateModal
+    .modal-dialog.modal-lg
+        .modal-content 
+            .modal-header
+                h5.modal-title Create item bundle
+                input.btn.btn-close(data-bs-dismiss="modal" aria-label="Close")
+            .modal-body
+                row 
+                    form.row.g-3
+                        +item-bundle(1, 1, 100)
+                        +item-bundle(2, 2, 1)
+                        +item-bundle(3, 3, 50)
+
+                        .col-md-12
+                            .input.btn.btn-secondary Add

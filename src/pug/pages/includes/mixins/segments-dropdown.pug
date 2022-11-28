@@ -1,0 +1,9 @@
+
+mixin segments-dropdown(selectedID)
+    select.form-select
+        option(selected=(selectedID==0)) Select a segment
+        option(selected=(selectedID==1 || selectedID=="Dolphins")) A4R5-XXXX-YYYY-ZZZZ - Dolphins
+        option(selected=(selectedID==2 || selectedID=="Tuna")) A4R5-XXXX-YYYY-ZZZZ - Tuna
+        option(selected=(selectedID==3 || selectedID=="Nemo")) A4R5-XXXX-YYYY-ZZZZ - Nemo
+        option(selected=(selectedID==4 || selectedID=="Dory")) A4R5-VVVV-WWWW-XXXX - Dory
+        option(selected=(selectedID==5 || selectedID=="Turtle")) A4R5-WWWW-XXXX-YYYY - Turtle

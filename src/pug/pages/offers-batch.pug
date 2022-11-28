@@ -1,0 +1,46 @@
+extends ../layouts/dashboard.pug
+
+block config
+    - var bodyClass = 'sb-nav-fixed'
+    - var pageTitle = 'Offers Batch';
+    - var index = true;
+    - var sidenavStyle = 'sb-sidenav-dark'
+    
+prepend css
+    //- Load Simple DataTables Stylesheet
+    link(href='https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css', rel='stylesheet')
+
+block content
+    .container-fluid.px-4
+        include includes/page-header.pug
+        include includes/modals/schedule-creation.pug
+        include includes/modals/bundle-creation.pug
+        
+        // Common fields
+        .row 
+            form.row.g-3
+                include includes/edit-offers-main.pug
+
+                // Datatable
+                .col-md-12
+                    .card.mb-4
+                        .card-body
+                            include includes/batch-datatable.pug
+
+                // Predict button
+                .col-md-12
+                    .col(style="width:fit-content;margin:0 auto")
+                        .input.btn.btn-primary Submit 
+                
+                include includes/edit-offers-secondary.pug
+
+        // Create offer button
+        .row
+            .col-md-2
+                a(href='offers-with-batch.html')
+                    input.btn.btn-success.btn-offer-predict(type='button', value='Create Offers', style="margin-top: 10px; margin-bottom: 10px")
+
+append scripts    
+    //- Load Simple DataTables Scripts
+    script(src='https://cdn.jsdelivr.net/npm/simple-datatables@latest', crossorigin='anonymous')
+    script(src='js/datatables-simple-demo.js')
