@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Offers Bulk - Offer Creation</title>
+        <title>Offers Batch - Offer Creation</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://formden.com/static/cdn/bootstrap-iso.css" rel="stylesheet" />
@@ -90,12 +90,131 @@
                     <div class="container-fluid px-4">
                         <!-- h1.mt-4 #{pageTitle}-->
                         <ol class="breadcrumb mb-4">
-                            <div class="breadcrumb-nav"><li class="breadcrumb-item active">Offers Bulk</li></div>
+                            <div class="breadcrumb-nav"><li class="breadcrumb-item active">Offers Batch</li></div>
                         </ol>
+                        <!-- schedule creation modal           -->
+                        <div class="modal fade" tabindex="-1" aria-labelledby="scheduleCreateModalLabel" aria-hidden="true" id="scheduleCreateModal">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Create schedule</h5>
+                                        <input class="btn btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                                    </div>
+                                    <div class="modal-body">
+                                        <row>
+                                            <form class="row g-3">
+                                                <div class="col-md-10">
+                                                    <div class="input-group">
+                                                        <input class="form-control" disabled value="10/15/2022 00:00 - 10/22/2022 23:00" />
+                                                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <button type="button" class="btn btn-primary btn-offer-predict"><i class="fas fa-plus"></i></button>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-minus"></i></button>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="input-group">
+                                                        <input class="form-control" disabled value="11/15/2022 00:00 - 11/22/2022 23:00" />
+                                                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <button type="button" class="btn btn-primary btn-offer-predict"><i class="fas fa-plus"></i></button>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-minus"></i></button>
+                                                </div>
+                                            </form>
+                                        </row>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Bundle creation modal           -->
+                        <div class="modal fade" tabindex="-1" aria-labelledby="bundleCreateModalLabel" aria-hidden="true" id="bundleCreateModal">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Create item bundle</h5>
+                                        <input class="btn btn-close" data-bs-dismiss="modal" aria-label="Close" />
+                                    </div>
+                                    <div class="modal-body">
+                                        <row>
+                                            <form class="row g-3">
+                                                <div class="col-md-6">
+                                                    <select class="form-select">
+                                                        <option>Select an item</option>
+                                                        <option selected>Currency ABCDE</option>
+                                                        <option>Item FGHJK</option>
+                                                        <option>Shard LMNOP</option>
+                                                        <option>Poster QRSTU</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2"><input class="form-control" type="number" min="1" max="10000" value="100" /></div>
+                                                <div class="col-md-4">
+                                                    <select class="form-select">
+                                                        <option>Select an asset</option>
+                                                        <option selected>UI/Tokens/UI_Token_Red_Sec_01</option>
+                                                        <option>UI/Tokens/UI_Token_Purple_Sec_01</option>
+                                                        <option>UI/Tokens/UI_Token_Black_Sec_01</option>
+                                                        <option>UI/StoreV2/OfferImages/More_Items</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-select">
+                                                        <option>Select an item</option>
+                                                        <option>Currency ABCDE</option>
+                                                        <option selected>Item FGHJK</option>
+                                                        <option>Shard LMNOP</option>
+                                                        <option>Poster QRSTU</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2"><input class="form-control" type="number" min="1" max="10000" value="1" /></div>
+                                                <div class="col-md-4">
+                                                    <select class="form-select">
+                                                        <option>Select an asset</option>
+                                                        <option>UI/Tokens/UI_Token_Red_Sec_01</option>
+                                                        <option selected>UI/Tokens/UI_Token_Purple_Sec_01</option>
+                                                        <option>UI/Tokens/UI_Token_Black_Sec_01</option>
+                                                        <option>UI/StoreV2/OfferImages/More_Items</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <select class="form-select">
+                                                        <option>Select an item</option>
+                                                        <option>Currency ABCDE</option>
+                                                        <option>Item FGHJK</option>
+                                                        <option selected>Shard LMNOP</option>
+                                                        <option>Poster QRSTU</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2"><input class="form-control" type="number" min="1" max="10000" value="50" /></div>
+                                                <div class="col-md-4">
+                                                    <select class="form-select">
+                                                        <option>Select an asset</option>
+                                                        <option>UI/Tokens/UI_Token_Red_Sec_01</option>
+                                                        <option>UI/Tokens/UI_Token_Purple_Sec_01</option>
+                                                        <option selected>UI/Tokens/UI_Token_Black_Sec_01</option>
+                                                        <option>UI/StoreV2/OfferImages/More_Items</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-12"><div class="input btn btn-secondary">Add</div></div>
+                                            </form>
+                                        </row>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Common fields-->
                         <div class="row">
                             <form class="row g-3">
-                                <!-- Row 1-->
                                 <div class="col-md-3">
                                     <label class="form-label">Offer ID</label>
                                     <input class="form-control" value="OFFER_WXYZ_NOV_2022" />
@@ -103,15 +222,16 @@
                                 <div class="col-md-3">
                                     <label class="form-label">Platform</label>
                                     <select class="form-select">
-                                        <option selected>Web</option>
-                                        <option>Mobile</option>
-                                        <option>Web, Mobile</option>
+                                        <option selected>Mobile</option>
+                                        <option>Web</option>
+                                        <option>Both</option>
                                     </select>
                                 </div>
                                 <div class="col-md-3">
                                     <label class="form-label">Gate ID</label>
                                     <select class="form-select">
-                                        <option selected>r50_staging</option>
+                                        <option selected>Select a gate</option>
+                                        <option>r50_staging</option>
                                         <option>r45_liveops</option>
                                         <option>r45_live</option>
                                         <option>r50_development</option>
@@ -127,33 +247,46 @@
                                 <!-- Row 3-->
                                 <div class="col-md-2">
                                     <label class="form-label">Stock</label>
-                                    <input class="form-control" type="number" min="1" max="10000" value="20" />
+                                    <input class="form-control" type="number" min="1" max="10000" value="" />
                                 </div>
+                                <!-- Row 4-->
                                 <div class="col-md-2">
                                     <label class="form-label">Offer Type</label>
                                     <select class="form-select">
-                                        <option selected>Please select an offer type</option>
-                                        <option>type 1</option>
-                                        <option>type 2</option>
+                                        <option selected>Select an offer type</option>
+                                        <option>Standard</option>
+                                        <option>Cash Contract</option>
+                                        <option>Hard Currency Sale</option>
+                                        <option>Step Up</option>
+                                        <option>Facebook Connect</option>
+                                        <option>Alternative Currency</option>
                                     </select>
                                 </div>
                                 <div class="col-md-2">
                                     <label class="form-label">Offer Weight</label>
-                                    <input class="form-control" value="150" />
+                                    <input class="form-control" value="" />
                                 </div>
                                 <div class="col-md-2">
                                     <label class="form-label">Offer Section</label>
-                                    <input class="form-control" value="Nov 2022 section" />
+                                    <select class="form-select">
+                                        <option selected>Select an offer section</option>
+                                        <option>R37_Section_Enhance_Superstar</option>
+                                        <option>Section_Starter_Pack</option>
+                                        <option>Section_LTEs</option>
+                                        <option>Section_Daily_Deals</option>
+                                        <option>Section_Champions_Club</option>
+                                        <option>Section_Shane_O_Mac</option>
+                                        <option>R37_Section_Charging</option>
+                                    </select>
                                 </div>
                                 <div class="col-md-2">
                                     <label class="form-label">Combo Type</label>
                                     <select class="form-select">
-                                        <option selected>Please select a combo type</option>
+                                        <option selected>Select a combo type</option>
                                         <option>combo 1</option>
                                         <option>combo 2</option>
                                     </select>
                                 </div>
-                                <div class="col-md-8"></div>
                                 <!-- Datatable-->
                                 <div class="col-md-12">
                                     <div class="card mb-4">
@@ -164,6 +297,7 @@
                                                         <th>Segment</th>
                                                         <th>SubID</th>
                                                         <th>Price</th>
+                                                        <th>Value</th>
                                                         <th>Items</th>
                                                     </tr>
                                                 </thead>
@@ -172,6 +306,7 @@
                                                         <th>Segment</th>
                                                         <th>SubID</th>
                                                         <th>Price</th>
+                                                        <th>Value</th>
                                                         <th>Items</th>
                                                     </tr>
                                                 </tfoot>
@@ -179,6 +314,7 @@
                                                     <tr>
                                                         <th>
                                                             <select class="form-select">
+                                                                <option>Select a segment</option>
                                                                 <option selected>A4R5-XXXX-YYYY-ZZZZ - Dolphins</option>
                                                                 <option>A4R5-XXXX-YYYY-ZZZZ - Tuna</option>
                                                                 <option>A4R5-XXXX-YYYY-ZZZZ - Nemo</option>
@@ -188,20 +324,26 @@
                                                         </th>
                                                         <th>Dolphins</th>
                                                         <th>$49.99</th>
+                                                        <th>$100.00</th>
                                                         <th>
-                                                            <div class="row text-list">Nov_2022_currency_multi x 10</div>
-                                                            <div class="row text-list">Nov_2022_gems_multi x 1000</div>
-                                                            <div class="row text-list">Nov_2022_shards_multi x 100</div>
-                                                            <div class="row icn-row">
-                                                                <div class="col">
-                                                                    <div class="input btn btn-secondary"><i class="fas fa-add"></i></div>
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <select class="form-select">
+                                                                        <option>Select a bundle</option>
+                                                                        <option selected>id_12345 - Nov_2022_token_multi</option>
+                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
+                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
+                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
+                                                                    </select>
                                                                 </div>
+                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
                                                             </div>
                                                         </th>
                                                     </tr>
                                                     <tr>
                                                         <th>
                                                             <select class="form-select">
+                                                                <option>Select a segment</option>
                                                                 <option>A4R5-XXXX-YYYY-ZZZZ - Dolphins</option>
                                                                 <option selected>A4R5-XXXX-YYYY-ZZZZ - Tuna</option>
                                                                 <option>A4R5-XXXX-YYYY-ZZZZ - Nemo</option>
@@ -209,21 +351,28 @@
                                                                 <option>A4R5-WWWW-XXXX-YYYY - Turtle</option>
                                                             </select>
                                                         </th>
-                                                        <th>Tune</th>
+                                                        <th>Tuna</th>
                                                         <th>$24.99</th>
+                                                        <th>$30.00</th>
                                                         <th>
-                                                            <div class="row text-list">Nov_2022_currency_multi x 10</div>
-                                                            <div class="row text-list">Nov_2022_gems_multi x 100</div>
-                                                            <div class="row icn-row">
-                                                                <div class="col">
-                                                                    <div class="input btn btn-secondary"><i class="fas fa-add"></i></div>
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <select class="form-select">
+                                                                        <option>Select a bundle</option>
+                                                                        <option>id_12345 - Nov_2022_token_multi</option>
+                                                                        <option selected>id_67890 - Nov_2022_currency_multi</option>
+                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
+                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
+                                                                    </select>
                                                                 </div>
+                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
                                                             </div>
                                                         </th>
                                                     </tr>
                                                     <tr>
                                                         <th>
                                                             <select class="form-select">
+                                                                <option>Select a segment</option>
                                                                 <option>A4R5-XXXX-YYYY-ZZZZ - Dolphins</option>
                                                                 <option>A4R5-XXXX-YYYY-ZZZZ - Tuna</option>
                                                                 <option selected>A4R5-XXXX-YYYY-ZZZZ - Nemo</option>
@@ -233,18 +382,26 @@
                                                         </th>
                                                         <th>Nemo</th>
                                                         <th>$10.99</th>
+                                                        <th>$20.00</th>
                                                         <th>
-                                                            <div class="row text-list">Nov_2022_gems_multi x 100</div>
-                                                            <div class="row icn-row">
-                                                                <div class="col">
-                                                                    <div class="input btn btn-secondary"><i class="fas fa-add"></i></div>
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <select class="form-select">
+                                                                        <option>Select a bundle</option>
+                                                                        <option>id_12345 - Nov_2022_token_multi</option>
+                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
+                                                                        <option selected>id_23456 - Nov_2022_gems_multi</option>
+                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
+                                                                    </select>
                                                                 </div>
+                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
                                                             </div>
                                                         </th>
                                                     </tr>
                                                     <tr>
                                                         <th>
                                                             <select class="form-select">
+                                                                <option>Select a segment</option>
                                                                 <option>A4R5-XXXX-YYYY-ZZZZ - Dolphins</option>
                                                                 <option>A4R5-XXXX-YYYY-ZZZZ - Tuna</option>
                                                                 <option>A4R5-XXXX-YYYY-ZZZZ - Nemo</option>
@@ -254,26 +411,35 @@
                                                         </th>
                                                         <th>Dory</th>
                                                         <th>$0.99</th>
+                                                        <th>$5.00</th>
                                                         <th>
-                                                            <div class="row icn-row">
-                                                                <div class="col">
-                                                                    <div class="input btn btn-secondary"><i class="fas fa-add"></i></div>
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <select class="form-select">
+                                                                        <option>Select a bundle</option>
+                                                                        <option>id_12345 - Nov_2022_token_multi</option>
+                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
+                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
+                                                                        <option selected>id_78901 - Nov_2022_shards_multi</option>
+                                                                    </select>
                                                                 </div>
+                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
                                                             </div>
                                                         </th>
                                                     </tr>
                                                     <tr style="background-color: #e9ecef; border-top-width: 2px">
                                                         <th colspan="100%">
-                                                            <div class="row icn-row">
-                                                                <div class="col"><div class="input btn btn-primary">Predict</div></div>
-                                                                <div class="col"><div class="input btn btn-secondary">Add</div></div>
-                                                            </div>
+                                                            <div class="col"><div class="input btn btn-secondary">Add</div></div>
                                                         </th>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
+                                </div>
+                                <!-- Predict button-->
+                                <div class="col-md-12">
+                                    <div class="col" style="width: fit-content; margin: 0 auto"><div class="input btn btn-primary">Submit</div></div>
                                 </div>
                                 <!-- Row 5-->
                                 <div class="col-md-5">
@@ -312,11 +478,16 @@ and more data</textarea
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-10">
-                                            <label class="form-label" style="margin-top: 12px">Background Image ID</label>
-                                            <input class="form-control" value="Nov 2022 section" />
+                                        <div class="col-md-12">
+                                            <label style="margin-top: 12px; margin-bottom: 8px">Background Image ID</label>
+                                            <select class="form-select">
+                                                <option>Select a background</option>
+                                                <option>UI/StoreV2/OfferBGs/Offer_Single3_WT0922_Show_Blank_Premium</option>
+                                                <option>UI/StoreV2/OfferBGs/Offer_Prizewall_WMU_Premium</option>
+                                                <option selected>UI/StoreV2/OfferBGs/Offer_Banner_MOTU_UniCol_Pack_Jumpstart_100</option>
+                                                <option>UI/StoreV2/OfferBGs/Offer_Banner_JohnnyGargano_Event</option>
+                                            </select>
                                         </div>
-                                        <div class="col-md-2 align-self-end"><input class="btn btn-primary btn-offer-predict" type="button" value="Search" /></div>
                                     </div>
                                     <div class="row">
                                         <div class="form-group" style="margin-top: 12px">
@@ -338,97 +509,7 @@ and more background data</textarea
                         <!-- Create offer button-->
                         <div class="row">
                             <div class="col-md-2">
-                                <a href="offers-with-bulk.html"><input class="btn btn-success btn-offer-predict" type="button" value="Create Offers" style="margin-top: 10px; margin-bottom: 10px" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Bundle creation modal           -->
-                    <div class="modal fade" tabindex="-1" aria-labelledby="bundleCreateModalLabel" aria-hidden="true" id="bundleCreateModal">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Create item bundle</h5>
-                                    <input class="btn btn-close" data-bs-dismiss="modal" aria-label="Close" />
-                                </div>
-                                <div class="modal-body">
-                                    <row>
-                                        <form class="row g-3">
-                                            <div class="col-md-7"><input class="form-control" value="Currency ABCDE" /></div>
-                                            <div class="col-md-3"><input class="form-control" type="number" min="1" max="10000" value="100" /></div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-primary btn-offer-predict"><i class="fas fa-plus"></i></button>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-minus"></i></button>
-                                            </div>
-                                            <div class="col-md-7"><input class="form-control" value="Item FGHJK" /></div>
-                                            <div class="col-md-3"><input class="form-control" type="number" min="1" max="10000" value="1" /></div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-primary btn-offer-predict"><i class="fas fa-plus"></i></button>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-minus"></i></button>
-                                            </div>
-                                            <div class="col-md-7"><input class="form-control" value="Shard LMNOP" /></div>
-                                            <div class="col-md-3"><input class="form-control" type="number" min="1" max="10000" value="50" /></div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-primary btn-offer-predict"><i class="fas fa-plus"></i></button>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-minus"></i></button>
-                                            </div>
-                                        </form>
-                                    </row>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">Predict</button>
-                                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Create</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- schedule creation modal           -->
-                    <div class="modal fade" tabindex="-1" aria-labelledby="scheduleCreateModalLabel" aria-hidden="true" id="scheduleCreateModal">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Create schedule</h5>
-                                    <input class="btn btn-close" data-bs-dismiss="modal" aria-label="Close" />
-                                </div>
-                                <div class="modal-body">
-                                    <row>
-                                        <form class="row g-3">
-                                            <div class="col-md-10">
-                                                <div class="input-group">
-                                                    <input class="form-control" disabled value="10/15/2022 00:00 - 10/22/2022 23:00" />
-                                                    <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-primary btn-offer-predict"><i class="fas fa-plus"></i></button>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-minus"></i></button>
-                                            </div>
-                                            <div class="col-md-10">
-                                                <div class="input-group">
-                                                    <input class="form-control" disabled value="11/15/2022 00:00 - 11/22/2022 23:00" />
-                                                    <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-primary btn-offer-predict"><i class="fas fa-plus"></i></button>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-minus"></i></button>
-                                            </div>
-                                        </form>
-                                    </row>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
-                                </div>
+                                <a href="offers-with-batch.html"><input class="btn btn-success btn-offer-predict" type="button" value="Create Offers" style="margin-top: 10px; margin-bottom: 10px" /></a>
                             </div>
                         </div>
                     </div>
