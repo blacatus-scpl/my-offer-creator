@@ -1,0 +1,9 @@
+
+mixin localizations-dropdown(selectedID)
+    select.form-select
+        option(selected=(selectedID==0)) Select a localization
+        option(selected=(selectedID==1)) !!BLANK
+        option(selected=(selectedID==2)) Buy now(!!BUTTON_BUYNOW)
+        option(selected=(selectedID==3)) Cancel(!!BUTTON_CANCEL)
+        option(selected=(selectedID==4)) BUY AGAIN!(!!BUTTON_BUYAGAIN)
+        option(selected=(selectedID==5)) OK!(!!BUTTON_OK)

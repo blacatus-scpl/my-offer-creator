@@ -1,43 +1,34 @@
 
-// schedule creation modal           
+mixin schedule-line(scheduleValue, repeatWeekly)
+    .col-md-9
+        .input-group
+            input.form-control(disabled, value=scheduleValue)
+            .input-group-append
+                button.btn.btn-outline-secondary(type="button", id="datePicker", name="datePicker") Edit
+    .col-md-2
+        .form-check.form-switch
+            label.form-label Repeat weekly
+            input.form-check-input(type="checkbox", role="switch", checked=repeatWeekly)
+    .col-md-1
+        .button.btn.btn-danger.btn-offer-predict
+            i.fas.fa-trash
+
 .modal.fade(tabindex="-1", aria-labelledby="scheduleCreateModalLabel" aria-hidden="true")#scheduleCreateModal
     .modal-dialog.modal-lg
         .modal-content 
             .modal-header
-                h5.modal-title Create schedule
-                input.btn.btn-close(data-bs-dismiss="modal" aria-label="Close")
+                h5.modal-title Edit schedule
             .modal-body
                 row 
                     form.row.g-3
-                        .col-md-10
-                            .input-group
-                                input.form-control(disabled, value="10/15/2022 00:00 - 10/22/2022 23:00")
-                                .input-group-append
-                                    button.btn.btn-outline-secondary(type="button", id="datePicker", name="datePicker") Edit
-                        .col-md-1
-                            <button type="button" class="btn btn-primary btn-offer-predict">
-                                i.fas.fa-plus
-                            </button>
-                        .col-md-1
-                            <button type="button" class="btn btn-danger btn-offer-predict">
-                                i.fas.fa-minus
-                            </button>
-                        .col-md-10
-                            .input-group
-                                input.form-control(disabled, value="11/15/2022 00:00 - 11/22/2022 23:00")
-                                .input-group-append
-                                    button.btn.btn-outline-secondary(type="button", id="datePicker", name="datePicker") Edit
-                        .col-md-1
-                            <button type="button" class="btn btn-primary btn-offer-predict">
-                                i.fas.fa-plus
-                            </button>
-                        .col-md-1
-                            <button type="button" class="btn btn-danger btn-offer-predict">
-                                i.fas.fa-minus
-                            </button>
+                        +schedule-line("11/15/2022 00:00 - 11/16/2022 23:00", false)
+                        +schedule-line("11/17/2022 00:00 - 11/18/2022 23:00", false)
+                        +schedule-line("11/19/2022 00:00 - 11/20/2022 23:00", true)
 
             .modal-footer
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>              
+                .col(style='flex-grow:1')
+                    .input.btn.btn-secondary Add
+                .input.btn.btn-danger(data-bs-dismiss="modal") Cancel
+                .input.btn.btn-primary(data-bs-dismiss="modal") Submit
 
             
