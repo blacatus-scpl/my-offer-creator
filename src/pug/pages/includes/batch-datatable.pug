@@ -5,6 +5,8 @@ table#datatablesSimple
     mixin table-line(id, price, value, bundleID)
         tr
             th
+                input.form-check-input(type='checkbox')
+            th
                 +segments-dropdown(id)
             th 
                 =id
@@ -20,6 +22,7 @@ table#datatablesSimple
                         input.btn.btn-primary.btn-offer-predict(type='button', value='Edit', data-bs-toggle="modal" data-bs-target="#bundleCreateModal")
     thead
         tr
+            th
             th Segment
             th SubID
             th Price
@@ -27,6 +30,7 @@ table#datatablesSimple
             th Items
     tfoot
         tr
+            th
             th Segment
             th SubID
             th Price
@@ -41,3 +45,4 @@ table#datatablesSimple
             th(colspan="100%")
                 .col
                     .input.btn.btn-secondary Add
+                    .input.btn.btn-danger Remove
