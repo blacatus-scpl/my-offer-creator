@@ -1,0 +1,62 @@
+mixin batch-datatable(predictions)
+    table#datatablesSimple
+        include segments-dropdown.pug
+        include bundles-dropdown.pug
+        include prices-dropdown.pug
+
+        mixin table-line(id, price, value, bundleID)
+            tr
+                th
+                    input.form-check-input(type='checkbox')
+                th
+                    +segments-dropdown(id)
+                th 
+                    =id
+                th 
+                    +prices-dropdown(price)
+                th 
+                    =value
+                th
+                    .row
+                        .col-md-10
+                            +bundles-dropdown(bundleID)
+                        .col-md-2
+                            input.btn.btn-primary.btn-offer-predict(type='button', value='Edit', data-bs-toggle="modal" data-bs-target="#bundleCreateModal")
+        thead
+            tr
+                th
+                th Segment
+                th SubID
+                th Price
+                th Value
+                th Items
+        tfoot
+            tr
+                th
+                th Segment
+                th SubID
+                th Price
+                th Value
+                th Items
+        tbody
+            if predictions
+                +table-line("Dolphins", "$49.99", "$100.00", 1)
+                +table-line("Tuna", "$24.99", "$30.00", 2)
+                +table-line("Nemo", "$10.99", "$20.00", 3)
+                +table-line("Dory", "$0.99", "$5.00", 4)
+            else 
+                +table-line("Dolphins", "", "$0.00", 0)
+                +table-line("Tuna", "", "$0.00", 0)
+                +table-line("Nemo", "", "$0.00", 0)
+                +table-line("Dory", "", "$.00", 0)
+
+            tr(style="background-color:#e9ecef;border-top-width:2px")
+                th(colspan="100%")
+                    .col
+                        .input.btn.btn-secondary Add
+                        .input.btn.btn-danger Remove
+            tr(style="background-color:#e9ecef;border-top-width:1px")
+                th(colspan="100%")
+                    .col(style="width:fit-content;margin:0 auto")
+                        a(href='offers-batch-predict.html')
+                            .input.btn.btn-primary Predict 

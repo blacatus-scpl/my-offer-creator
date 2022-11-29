@@ -1,0 +1,8 @@
+mixin prices-dropdown(selectedID)
+    select.form-select
+        option(selected=(selectedID==0 || selectedID=="select")) Select a price
+        option(selected=(selectedID==1 || selectedID=="$24.99")) $24.99
+        option(selected=(selectedID==2 || selectedID=="$0.99")) $0.99
+        option(selected=(selectedID==3 || selectedID=="$4.99")) $4.99
+        option(selected=(selectedID==4 || selectedID=="$10.99")) $10.99
+        option(selected=(selectedID==5 || selectedID=="$49.99")) $49.99
