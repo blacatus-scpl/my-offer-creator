@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>New Offers - Offer Creation</title>
+        <title>Offers Batch - Offer Creation</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <link href="https://formden.com/static/cdn/bootstrap-iso.css" rel="stylesheet" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" rel="stylesheet" />
@@ -93,8 +94,71 @@
                     <div class="container-fluid px-4">
                         <!-- h1.mt-4 #{pageTitle}-->
                         <ol class="breadcrumb mb-4">
-                            <div class="breadcrumb-nav"><li class="breadcrumb-item active">New Offers</li></div>
+                            <div class="breadcrumb-nav"><li class="breadcrumb-item active">Offers Batch</li></div>
                         </ol>
+                        <div class="modal fade" tabindex="-1" aria-labelledby="scheduleCreateModalLabel" aria-hidden="true" id="scheduleCreateModal">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header"><h5 class="modal-title">Edit schedule</h5></div>
+                                    <div class="modal-body">
+                                        <row>
+                                            <form class="row g-3">
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <input class="form-control" disabled value="11/15/2022 00:00 - 11/16/2022 23:00" />
+                                                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check form-switch">
+                                                        <label class="form-label">Repeat weekly</label>
+                                                        <input class="form-check-input" type="checkbox" role="switch" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <div class="button btn btn-danger btn-offer-predict"><i class="fas fa-trash"></i></div>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <input class="form-control" disabled value="11/17/2022 00:00 - 11/18/2022 23:00" />
+                                                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check form-switch">
+                                                        <label class="form-label">Repeat weekly</label>
+                                                        <input class="form-check-input" type="checkbox" role="switch" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <div class="button btn btn-danger btn-offer-predict"><i class="fas fa-trash"></i></div>
+                                                </div>
+                                                <div class="col-md-9">
+                                                    <div class="input-group">
+                                                        <input class="form-control" disabled value="11/19/2022 00:00 - 11/20/2022 23:00" />
+                                                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-check form-switch">
+                                                        <label class="form-label">Repeat weekly</label>
+                                                        <input class="form-check-input" type="checkbox" role="switch" checked />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <div class="button btn btn-danger btn-offer-predict"><i class="fas fa-trash"></i></div>
+                                                </div>
+                                            </form>
+                                        </row>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="col" style="flex-grow: 1"><div class="input btn btn-secondary">Add</div></div>
+                                        <div class="input btn btn-danger" data-bs-dismiss="modal">Cancel</div>
+                                        <div class="input btn btn-primary" data-bs-dismiss="modal">Submit</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Bundle creation modal           -->
                         <div class="modal fade" tabindex="-1" aria-labelledby="bundleCreateModalLabel" aria-hidden="true" id="bundleCreateModal">
                             <div class="modal-dialog modal-lg">
@@ -180,72 +244,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal fade" tabindex="-1" aria-labelledby="scheduleCreateModalLabel" aria-hidden="true" id="scheduleCreateModal">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header"><h5 class="modal-title">Edit schedule</h5></div>
-                                    <div class="modal-body">
-                                        <row>
-                                            <form class="row g-3">
-                                                <div class="col-md-9">
-                                                    <div class="input-group">
-                                                        <input class="form-control" disabled value="11/15/2022 00:00 - 11/16/2022 23:00" />
-                                                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-check form-switch">
-                                                        <label class="form-label">Repeat weekly</label>
-                                                        <input class="form-check-input" type="checkbox" role="switch" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <div class="button btn btn-danger btn-offer-predict"><i class="fas fa-trash"></i></div>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="input-group">
-                                                        <input class="form-control" disabled value="11/17/2022 00:00 - 11/18/2022 23:00" />
-                                                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-check form-switch">
-                                                        <label class="form-label">Repeat weekly</label>
-                                                        <input class="form-check-input" type="checkbox" role="switch" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <div class="button btn btn-danger btn-offer-predict"><i class="fas fa-trash"></i></div>
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="input-group">
-                                                        <input class="form-control" disabled value="11/19/2022 00:00 - 11/20/2022 23:00" />
-                                                        <div class="input-group-append"><button class="btn btn-outline-secondary" type="button" id="datePicker" name="datePicker">Edit</button></div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <div class="form-check form-switch">
-                                                        <label class="form-label">Repeat weekly</label>
-                                                        <input class="form-check-input" type="checkbox" role="switch" checked />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <div class="button btn btn-danger btn-offer-predict"><i class="fas fa-trash"></i></div>
-                                                </div>
-                                            </form>
-                                        </row>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="col" style="flex-grow: 1"><div class="input btn btn-secondary">Add</div></div>
-                                        <div class="input btn btn-danger" data-bs-dismiss="modal">Cancel</div>
-                                        <div class="input btn btn-primary" data-bs-dismiss="modal">Submit</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Common fields-->
                         <div class="row">
                             <form class="row g-3">
-                                <!-- Edit offers main data-->
                                 <div class="col-md-3">
                                     <label class="form-label">Offer ID</label>
                                     <input class="form-control" value="OFFER_WXYZ_NOV_2022" />
@@ -318,50 +319,208 @@
                                         <option>combo 2</option>
                                     </select>
                                 </div>
-                                <!-- Edit offers single-->
-                                <div class="col-md-3">
-                                    <label class="form-label">Segment ID</label>
-                                    <select class="form-select">
-                                        <option selected>Select a segment</option>
-                                        <option>A4R5-XXXX-YYYY-ZZZZ - Dolphins</option>
-                                        <option>A4R5-XXXX-YYYY-ZZZZ - Tuna</option>
-                                        <option>A4R5-XXXX-YYYY-ZZZZ - Nemo</option>
-                                        <option>A4R5-VVVV-WWWW-XXXX - Dory</option>
-                                        <option>A4R5-WWWW-XXXX-YYYY - Turtle</option>
-                                    </select>
+                                <!-- Datatable-->
+                                <div class="col-md-12">
+                                    <div class="card mb-4">
+                                        <div class="card-body">
+                                            <table id="datatablesSimple">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Segment</th>
+                                                        <th>SubID</th>
+                                                        <th>Price</th>
+                                                        <th>Value</th>
+                                                        <th>Items</th>
+                                                    </tr>
+                                                </thead>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th>Segment</th>
+                                                        <th>SubID</th>
+                                                        <th>Price</th>
+                                                        <th>Value</th>
+                                                        <th>Items</th>
+                                                    </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                    <tr>
+                                                        <th><input class="form-check-input" type="checkbox" /></th>
+                                                        <th>
+                                                            <select class="form-select">
+                                                                <option>Select a segment</option>
+                                                                <option selected>A4R5-XXXX-YYYY-ZZZZ - Dolphins</option>
+                                                                <option>A4R5-XXXX-YYYY-ZZZZ - Tuna</option>
+                                                                <option>A4R5-XXXX-YYYY-ZZZZ - Nemo</option>
+                                                                <option>A4R5-VVVV-WWWW-XXXX - Dory</option>
+                                                                <option>A4R5-WWWW-XXXX-YYYY - Turtle</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>Dolphins</th>
+                                                        <th>
+                                                            <select class="form-select">
+                                                                <option>Select a price</option>
+                                                                <option>$24.99</option>
+                                                                <option>$0.99</option>
+                                                                <option>$4.99</option>
+                                                                <option>$10.99</option>
+                                                                <option selected>$49.99</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>$100.00</th>
+                                                        <th>
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <select class="form-select">
+                                                                        <option>Select a bundle</option>
+                                                                        <option selected>id_12345 - Nov_2022_token_multi</option>
+                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
+                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
+                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><input class="form-check-input" type="checkbox" /></th>
+                                                        <th>
+                                                            <select class="form-select">
+                                                                <option>Select a segment</option>
+                                                                <option>A4R5-XXXX-YYYY-ZZZZ - Dolphins</option>
+                                                                <option selected>A4R5-XXXX-YYYY-ZZZZ - Tuna</option>
+                                                                <option>A4R5-XXXX-YYYY-ZZZZ - Nemo</option>
+                                                                <option>A4R5-VVVV-WWWW-XXXX - Dory</option>
+                                                                <option>A4R5-WWWW-XXXX-YYYY - Turtle</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>Tuna</th>
+                                                        <th>
+                                                            <select class="form-select">
+                                                                <option>Select a price</option>
+                                                                <option selected>$24.99</option>
+                                                                <option>$0.99</option>
+                                                                <option>$4.99</option>
+                                                                <option>$10.99</option>
+                                                                <option>$49.99</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>$30.00</th>
+                                                        <th>
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <select class="form-select">
+                                                                        <option>Select a bundle</option>
+                                                                        <option>id_12345 - Nov_2022_token_multi</option>
+                                                                        <option selected>id_67890 - Nov_2022_currency_multi</option>
+                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
+                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><input class="form-check-input" type="checkbox" /></th>
+                                                        <th>
+                                                            <select class="form-select">
+                                                                <option>Select a segment</option>
+                                                                <option>A4R5-XXXX-YYYY-ZZZZ - Dolphins</option>
+                                                                <option>A4R5-XXXX-YYYY-ZZZZ - Tuna</option>
+                                                                <option selected>A4R5-XXXX-YYYY-ZZZZ - Nemo</option>
+                                                                <option>A4R5-VVVV-WWWW-XXXX - Dory</option>
+                                                                <option>A4R5-WWWW-XXXX-YYYY - Turtle</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>Nemo</th>
+                                                        <th>
+                                                            <select class="form-select">
+                                                                <option>Select a price</option>
+                                                                <option>$24.99</option>
+                                                                <option>$0.99</option>
+                                                                <option>$4.99</option>
+                                                                <option selected>$10.99</option>
+                                                                <option>$49.99</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>$20.00</th>
+                                                        <th>
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <select class="form-select">
+                                                                        <option>Select a bundle</option>
+                                                                        <option>id_12345 - Nov_2022_token_multi</option>
+                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
+                                                                        <option selected>id_23456 - Nov_2022_gems_multi</option>
+                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><input class="form-check-input" type="checkbox" /></th>
+                                                        <th>
+                                                            <select class="form-select">
+                                                                <option>Select a segment</option>
+                                                                <option>A4R5-XXXX-YYYY-ZZZZ - Dolphins</option>
+                                                                <option>A4R5-XXXX-YYYY-ZZZZ - Tuna</option>
+                                                                <option>A4R5-XXXX-YYYY-ZZZZ - Nemo</option>
+                                                                <option selected>A4R5-VVVV-WWWW-XXXX - Dory</option>
+                                                                <option>A4R5-WWWW-XXXX-YYYY - Turtle</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>Dory</th>
+                                                        <th>
+                                                            <select class="form-select">
+                                                                <option>Select a price</option>
+                                                                <option>$24.99</option>
+                                                                <option selected>$0.99</option>
+                                                                <option>$4.99</option>
+                                                                <option>$10.99</option>
+                                                                <option>$49.99</option>
+                                                            </select>
+                                                        </th>
+                                                        <th>$5.00</th>
+                                                        <th>
+                                                            <div class="row">
+                                                                <div class="col-md-10">
+                                                                    <select class="form-select">
+                                                                        <option>Select a bundle</option>
+                                                                        <option>id_12345 - Nov_2022_token_multi</option>
+                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
+                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
+                                                                        <option selected>id_78901 - Nov_2022_shards_multi</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr style="background-color: #e9ecef; border-top-width: 2px">
+                                                        <th colspan="100%">
+                                                            <div class="col">
+                                                                <div class="input btn btn-secondary">Add</div>
+                                                                <div class="input btn btn-danger">Remove</div>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                    <tr style="background-color: #e9ecef; border-top-width: 1px">
+                                                        <th colspan="100%">
+                                                            <div class="col" style="width: fit-content; margin: 0 auto">
+                                                                <a href="offers-batch-predict.html"><div class="input btn btn-primary">Predict</div></a>
+                                                            </div>
+                                                        </th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-1 align-self-end">
-                                    <a href="offers-new-predict.html"><input class="btn btn-primary btn-offer-predict" type="button" value="Predict" /></a>
-                                </div>
-                                <div class="col-md-2">
-                                    <label class="form-label">Price SKU</label>
-                                    <select class="form-select">
-                                        <option selected>Select a price</option>
-                                        <option>$24.99</option>
-                                        <option>$0.99</option>
-                                        <option>$4.99</option>
-                                        <option>$10.99</option>
-                                        <option>$49.99</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label">Item Bundle ID</label>
-                                    <select class="form-select">
-                                        <option selected>Select a bundle</option>
-                                        <option>id_12345 - Nov_2022_token_multi</option>
-                                        <option>id_67890 - Nov_2022_currency_multi</option>
-                                        <option>id_23456 - Nov_2022_gems_multi</option>
-                                        <option>id_78901 - Nov_2022_shards_multi</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-1 align-self-end"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
-                                <div class="col-md-2"></div>
-                                <div class="col-md-2">
-                                    <label class="form-label">Value</label>
-                                    <div class="input-group"><input class="form-control" disabled value="$ 100.00" /></div>
-                                </div>
-                                <div class="col-md-10"></div>
-                                <!-- Edit offers secondary data-->
                                 <!-- Schedule-->
                                 <div class="col-md-5">
                                     <label class="form-label">Schedule</label>
@@ -447,13 +606,13 @@
                                     <label class="form-label">Image Preview</label>
                                     <img class="img-thumbnail" src="assets/img/Ad_Sociall9l-768x402.png" />
                                 </div>
-                                <!-- Create offer button-->
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <a href="offers-with-new.html"><input class="btn btn-success btn-offer-predict" type="button" value="Create Offer" style="margin-top: 10px; margin-bottom: 10px" /></a>
-                                    </div>
-                                </div>
                             </form>
+                        </div>
+                        <!-- Create offer button-->
+                        <div class="row">
+                            <div class="col-md-2">
+                                <a href="offers-with-batch.html"><input class="btn btn-success btn-offer-predict" type="button" value="Create Offers" style="margin-top: 10px; margin-bottom: 10px" /></a>
+                            </div>
                         </div>
                     </div>
                 </main>
@@ -466,5 +625,7 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
