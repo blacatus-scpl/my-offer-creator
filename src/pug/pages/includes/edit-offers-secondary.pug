@@ -1,7 +1,8 @@
 
 include mixins/backgrounds-dropdown.pug
+include mixins/localizations-dropdown.pug
 
-// Row 5
+// Schedule
 .col-md-5
     label.form-label Schedule
     .input-group
@@ -15,29 +16,26 @@ include mixins/backgrounds-dropdown.pug
 // Art preview
 .col-md-6
     .row
-        .col-md-10
+        .col-md-6(style="margin-top: 12px; margin-bottom:8px")
             label.form-label Store Image ID
-            input.form-control(value="Nov 2022 section")
-        .col-md-2.align-self-end
-            input.btn.btn-primary.btn-offer-predict(type='button', value='Search')
-    .row 
-        .form-group(style="margin-top: 12px")
+            +assets-dropdown(0)
+        .col-md-6(style="margin-top: 12px; margin-bottom:8px")
+            label.form-label Store Image Name
+            +localizations-dropdown(0)
+        .col-md-6(style="margin-top: 12px; margin-bottom:8px")
             label.form-label Store Image Description
-            textarea.form-control(rows=4)
-                | Nov 2022 section
-                | with description
-                | and more data
-    .row
-        .col-md-12
-            label(style="margin-top: 12px; margin-bottom:8px") Background Image ID
+            +localizations-dropdown(0)
+        .col-md-6
+        .col-md-6(style="margin-top: 12px; margin-bottom:8px")
+            label.form-label Description
+            +localizations-dropdown(0)
+        .col-md-6
+        .col-md-6(style="margin-top: 12px; margin-bottom:8px")
+            label.form-label Background Image ID
             +backgrounds-dropdown(3)
-    .row 
-        .form-group(style="margin-top: 12px")
+        .col-md-6(style="margin-top: 12px; margin-bottom:8px")
             label.form-label Background Image Description
-            textarea.form-control(rows=4)
-                | My favourite background
-                | with description
-                | and more background data
+            +localizations-dropdown(0)
 .col-md-3
     label.form-label Image Preview
     img(src="assets/img/Ad_Sociall9l-768x402.png" class="img-thumbnail")
