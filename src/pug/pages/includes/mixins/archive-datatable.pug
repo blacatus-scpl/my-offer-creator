@@ -1,0 +1,64 @@
+mixin archive-datatable()
+    table#datatablesSimple
+        mixin table-line(id, platform, price, value, schedule, gate)
+            tr
+                th 
+                    input.form-check-input(type='checkbox')
+                th 
+                    =id
+                th 
+                    =platform
+                th 
+                    =price
+                th 
+                    =value
+                th 
+                    =schedule
+                th 
+                    =gate
+                th 
+                    .row 
+                        a.nav-table-link(href='offers-new.html')
+                            .sb-nav-link-table-icon
+                                i.fas.fa-pencil
+        thead
+            tr
+                th
+                th ID
+                th Platform
+                th Price
+                th Value
+                th Schedule
+                th Gate
+                th Actions
+        tfoot
+            tr
+                th
+                th ID
+                th Platform
+                th Price
+                th Value
+                th Schedule
+                th Gate
+                th Actions
+        tbody
+            +table-line("old_offer_id_1", "web", "$9.99", "$20.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_2", "web", "$19.99", "$30.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_3", "web", "$9.99", "$15.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_4", "mobile", "$29.99", "$45.00", "10/09/2022 - 10/17/2022", "r45_live")
+            +table-line("old_offer_id_5", "web", "$19.99", "$30.00", "10/09/2022 - 10/10/2022", "r45_liveops")
+            +table-line("old_offer_id_6", "web", "$19.99", "$30.00", "09/10/2022 - 09/17/2022", "r45_live")
+            +table-line("old_offer_id_7", "web", "$9.99", "$50.00", "10/17/2022 - 10/27/2022", "r45_live")
+            +table-line("old_offer_id_8", "web", "$9.99", "$20.00", "09/10/2022 - 09/17/2022", "r45_live")
+            +table-line("old_offer_id_9", "web", "$19.99", "$30.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_10", "web, mobile", "$59.99", "$100.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_11", "web", "$19.99", "$30.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_12", "web", "$19.99", "$40.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_13", "web", "$19.99", "$20.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_14", "web", "$19.99", "$10.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_15", "web", "$19.99", "$30.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_16", "web", "$19.99", "$50.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_17", "web", "$19.99", "$60.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_18", "web", "$19.99", "$40.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_19", "web", "$19.99", "$20.00", "10/10/2022 - 10/17/2022", "r45_liveops")
+            +table-line("old_offer_id_20", "web", "$19.99", "$30.00", "10/10/2022 - 10/17/2022", "r45_liveops")

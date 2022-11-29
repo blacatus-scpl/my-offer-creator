@@ -1,0 +1,26 @@
+extends ../layouts/dashboard.pug
+
+block config
+    - var bodyClass = 'sb-nav-fixed'
+    - var pageTitle = 'Archive Offers';
+    - var index = true;
+    - var sidenavStyle = 'sb-sidenav-dark'
+
+prepend css
+    //- Load Simple DataTables Stylesheet
+    link(href='https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css', rel='stylesheet')
+
+block content
+    .container-fluid.px-4
+        include includes/page-header.pug
+        include includes/mixins/archive-datatable.pug
+        .row
+            .card.mb-4
+                .card-body
+                    +archive-datatable
+
+
+append scripts
+    //- Load Simple DataTables Scripts
+    script(src='https://cdn.jsdelivr.net/npm/simple-datatables@latest', crossorigin='anonymous')
+    script(src='js/datatables-simple-demo.js')
