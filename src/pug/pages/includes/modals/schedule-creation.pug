@@ -18,7 +18,6 @@ mixin schedule-line(scheduleValue, repeatWeekly)
         .modal-content 
             .modal-header
                 h5.modal-title Edit schedule
-                input.btn.btn-close(data-bs-dismiss="modal" aria-label="Close")
             .modal-body
                 row 
                     form.row.g-3
@@ -29,7 +28,7 @@ mixin schedule-line(scheduleValue, repeatWeekly)
             .modal-footer
                 .col(style='flex-grow:1')
                     .input.btn.btn-secondary Add
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>              
+                .input.btn.btn-danger(data-bs-dismiss="modal") Cancel
+                .input.btn.btn-primary(data-bs-dismiss="modal") Submit
 
             

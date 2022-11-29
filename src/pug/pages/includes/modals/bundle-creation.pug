@@ -20,7 +20,6 @@ mixin item-bundle(itemID, assetID, value)
         .modal-content 
             .modal-header
                 h5.modal-title Create item bundle
-                input.btn.btn-close(data-bs-dismiss="modal" aria-label="Close")
             .modal-body
                 row 
                     form.row.g-3
@@ -31,3 +30,7 @@ mixin item-bundle(itemID, assetID, value)
             .modal-footer
                 .col(style='flex-grow:1')
                     .input.btn.btn-secondary Add
+                .input.btn.btn-danger(data-bs-dismiss="modal") Cancel
+                .input.btn.btn-primary(data-bs-dismiss="modal") Submit
+
+            
