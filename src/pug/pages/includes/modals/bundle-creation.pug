@@ -4,12 +4,16 @@ include ../mixins/items-dropdown.pug
 include ../mixins/assets-dropdown.pug
 
 mixin item-bundle(itemID, assetID, value)
-    .col-md-6
+    .col-md-5
         +items-dropdown(itemID)
     .col-md-2
         input.form-control(type="number", min="1", max="10000", value=value)
     .col-md-4
         +assets-dropdown(assetID)
+    .col-md-1
+        <button type="button" class="btn btn-danger btn-offer-predict">
+            i.fas.fa-trash
+        </button>
 
 .modal.fade(tabindex="-1", aria-labelledby="bundleCreateModalLabel" aria-hidden="true")#bundleCreateModal
     .modal-dialog.modal-lg
