@@ -159,91 +159,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Bundle creation modal           -->
-                        <div class="modal fade" tabindex="-1" aria-labelledby="bundleCreateModalLabel" aria-hidden="true" id="bundleCreateModal">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header"><h5 class="modal-title">Create item bundle</h5></div>
-                                    <div class="modal-body">
-                                        <row>
-                                            <form class="row g-3">
-                                                <div class="col-md-5">
-                                                    <select class="form-select">
-                                                        <option>Select an item</option>
-                                                        <option selected>Currency ABCDE</option>
-                                                        <option>Item FGHJK</option>
-                                                        <option>Shard LMNOP</option>
-                                                        <option>Poster QRSTU</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-2"><input class="form-control" type="number" min="1" max="10000" value="100" /></div>
-                                                <div class="col-md-4">
-                                                    <select class="form-select">
-                                                        <option>Select an asset</option>
-                                                        <option selected>UI/Tokens/UI_Token_Red_Sec_01</option>
-                                                        <option>UI/Tokens/UI_Token_Purple_Sec_01</option>
-                                                        <option>UI/Tokens/UI_Token_Black_Sec_01</option>
-                                                        <option>UI/StoreV2/OfferImages/More_Items</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-trash"></i></button>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <select class="form-select">
-                                                        <option>Select an item</option>
-                                                        <option>Currency ABCDE</option>
-                                                        <option selected>Item FGHJK</option>
-                                                        <option>Shard LMNOP</option>
-                                                        <option>Poster QRSTU</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-2"><input class="form-control" type="number" min="1" max="10000" value="1" /></div>
-                                                <div class="col-md-4">
-                                                    <select class="form-select">
-                                                        <option>Select an asset</option>
-                                                        <option>UI/Tokens/UI_Token_Red_Sec_01</option>
-                                                        <option selected>UI/Tokens/UI_Token_Purple_Sec_01</option>
-                                                        <option>UI/Tokens/UI_Token_Black_Sec_01</option>
-                                                        <option>UI/StoreV2/OfferImages/More_Items</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-trash"></i></button>
-                                                </div>
-                                                <div class="col-md-5">
-                                                    <select class="form-select">
-                                                        <option>Select an item</option>
-                                                        <option>Currency ABCDE</option>
-                                                        <option>Item FGHJK</option>
-                                                        <option selected>Shard LMNOP</option>
-                                                        <option>Poster QRSTU</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-2"><input class="form-control" type="number" min="1" max="10000" value="50" /></div>
-                                                <div class="col-md-4">
-                                                    <select class="form-select">
-                                                        <option>Select an asset</option>
-                                                        <option>UI/Tokens/UI_Token_Red_Sec_01</option>
-                                                        <option>UI/Tokens/UI_Token_Purple_Sec_01</option>
-                                                        <option selected>UI/Tokens/UI_Token_Black_Sec_01</option>
-                                                        <option>UI/StoreV2/OfferImages/More_Items</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-1">
-                                                    <button type="button" class="btn btn-danger btn-offer-predict"><i class="fas fa-trash"></i></button>
-                                                </div>
-                                            </form>
-                                        </row>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="col" style="flex-grow: 1"><div class="input btn btn-secondary">Add</div></div>
-                                        <div class="input btn btn-danger" data-bs-dismiss="modal">Cancel</div>
-                                        <div class="input btn btn-primary" data-bs-dismiss="modal">Submit</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <!-- Common fields-->
                         <div class="row">
                             <form class="row g-3">
@@ -269,58 +184,42 @@
                                         <option>r50_development</option>
                                     </select>
                                 </div>
-                                <div class="col-md-3">
-                                    <label class="form-label">Global Offer</label>
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch" />
-                                        <label class="form-label">Enable</label>
+                                <div class="col-md-12"></div>
+                                <!-- Edit offers single-->
+                                <div class="col-md-9">
+                                    <label class="form-label">Main Items</label>
+                                    <div class="row" style="margin: 1rem">
+                                        <form class="row g-3">
+                                            <div class="col-md-5">
+                                                <select class="form-select">
+                                                    <option selected>Select an item</option>
+                                                    <option>Currency ABCDE</option>
+                                                    <option>Item FGHJK</option>
+                                                    <option>Shard LMNOP</option>
+                                                    <option>Poster QRSTU</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2"><input class="form-control" type="number" min="1" max="10000" value="" /></div>
+                                            <div class="col-md-4">
+                                                <select class="form-select">
+                                                    <option selected>Select an asset</option>
+                                                    <option>UI/Tokens/UI_Token_Red_Sec_01</option>
+                                                    <option>UI/StoreV1/UI_Token_Purple_Sec_01</option>
+                                                    <option>UI/StoreV2/OfferImages/More_Items</option>
+                                                    <option>UI/Tokens/UI_Token_Black_Sec_01</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <div class="button btn btn-danger btn-offer-predict" style="width: fit-content"><i class="fas fa-trash"></i></div>
+                                            </div>
+                                            <div class="col-md-12" style="height: 0.5rem"></div>
+                                            <div class="col" style="flex-grow: 1"><div class="input btn btn-secondary">Add</div></div>
+                                        </form>
                                     </div>
                                 </div>
-                                <!-- Row 3-->
-                                <div class="col-md-2">
-                                    <label class="form-label">Stock</label>
-                                    <input class="form-control" type="number" min="1" max="10000" value="" />
-                                </div>
-                                <!-- Row 4-->
-                                <div class="col-md-2">
-                                    <label class="form-label">Offer Type</label>
-                                    <select class="form-select">
-                                        <option selected>Select an offer type</option>
-                                        <option>Standard</option>
-                                        <option>Cash Contract</option>
-                                        <option>Hard Currency Sale</option>
-                                        <option>Step Up</option>
-                                        <option>Facebook Connect</option>
-                                        <option>Alternative Currency</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label class="form-label">Offer Weight</label>
-                                    <input class="form-control" value="" />
-                                </div>
-                                <div class="col-md-2">
-                                    <label class="form-label">Offer Section</label>
-                                    <select class="form-select">
-                                        <option selected>Select an offer section</option>
-                                        <option>R37_Section_Enhance_Superstar</option>
-                                        <option>Section_Starter_Pack</option>
-                                        <option>Section_LTEs</option>
-                                        <option>Section_Daily_Deals</option>
-                                        <option>Section_Champions_Club</option>
-                                        <option>Section_Shane_O_Mac</option>
-                                        <option>R37_Section_Charging</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <label class="form-label">Combo Type</label>
-                                    <select class="form-select">
-                                        <option selected>Select a combo type</option>
-                                        <option>combo 1</option>
-                                        <option>combo 2</option>
-                                    </select>
-                                </div>
+                                <div class="col-md-12"></div>
                                 <!-- Datatable-->
-                                <div class="col-md-12">
+                                <div class="col-md-12" style="margin-top: 2rem">
                                     <div class="card mb-4">
                                         <div class="card-body">
                                             <table id="datatablesSimple">
@@ -369,18 +268,10 @@
                                                             </select>
                                                         </th>
                                                         <th>$0.00</th>
-                                                        <th>
+                                                        <th style="width: 40%">
                                                             <div class="row">
-                                                                <div class="col-md-10">
-                                                                    <select class="form-select">
-                                                                        <option selected>Select a bundle</option>
-                                                                        <option>id_12345 - Nov_2022_token_multi</option>
-                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
-                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
-                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
+                                                                <form class="row g-3"></form>
+                                                                <div class="col" style="flex-grow: 1"><div class="input btn btn-secondary">Add</div></div>
                                                             </div>
                                                         </th>
                                                     </tr>
@@ -408,18 +299,10 @@
                                                             </select>
                                                         </th>
                                                         <th>$0.00</th>
-                                                        <th>
+                                                        <th style="width: 40%">
                                                             <div class="row">
-                                                                <div class="col-md-10">
-                                                                    <select class="form-select">
-                                                                        <option selected>Select a bundle</option>
-                                                                        <option>id_12345 - Nov_2022_token_multi</option>
-                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
-                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
-                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
+                                                                <form class="row g-3"></form>
+                                                                <div class="col" style="flex-grow: 1"><div class="input btn btn-secondary">Add</div></div>
                                                             </div>
                                                         </th>
                                                     </tr>
@@ -447,18 +330,10 @@
                                                             </select>
                                                         </th>
                                                         <th>$0.00</th>
-                                                        <th>
+                                                        <th style="width: 40%">
                                                             <div class="row">
-                                                                <div class="col-md-10">
-                                                                    <select class="form-select">
-                                                                        <option selected>Select a bundle</option>
-                                                                        <option>id_12345 - Nov_2022_token_multi</option>
-                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
-                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
-                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
+                                                                <form class="row g-3"></form>
+                                                                <div class="col" style="flex-grow: 1"><div class="input btn btn-secondary">Add</div></div>
                                                             </div>
                                                         </th>
                                                     </tr>
@@ -485,19 +360,11 @@
                                                                 <option>$49.99</option>
                                                             </select>
                                                         </th>
-                                                        <th>$.00</th>
-                                                        <th>
+                                                        <th>$0.00</th>
+                                                        <th style="width: 40%">
                                                             <div class="row">
-                                                                <div class="col-md-10">
-                                                                    <select class="form-select">
-                                                                        <option selected>Select a bundle</option>
-                                                                        <option>id_12345 - Nov_2022_token_multi</option>
-                                                                        <option>id_67890 - Nov_2022_currency_multi</option>
-                                                                        <option>id_23456 - Nov_2022_gems_multi</option>
-                                                                        <option>id_78901 - Nov_2022_shards_multi</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-2"><input class="btn btn-primary btn-offer-predict" type="button" value="Edit" data-bs-toggle="modal" data-bs-target="#bundleCreateModal" /></div>
+                                                                <form class="row g-3"></form>
+                                                                <div class="col" style="flex-grow: 1"><div class="input btn btn-secondary">Add</div></div>
                                                             </div>
                                                         </th>
                                                     </tr>
@@ -521,90 +388,156 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Schedule-->
-                                <div class="col-md-5">
-                                    <label class="form-label">Schedule</label>
-                                    <div class="input-group">
-                                        <input class="form-control" disabled value="MM/DD/YYYY HH:MM - MM/DD/YYYY HH:MM" />
-                                        <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                <div class="div">
+                                    <div class="button collapsible">Open advanced settings</div>
+                                    <div class="div content">
+                                        <div class="row">
+                                            <form class="row g-3">
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Offer</label>
+                                                    <select class="form-select">
+                                                        <option selected>Dolphins</option>
+                                                        <option>Tuna</option>
+                                                        <option>Nemo</option>
+                                                        <option>Dory</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-12"></div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Stock</label>
+                                                    <input class="form-control" type="number" min="1" max="10000" value="100" />
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Offer Type</label>
+                                                    <select class="form-select">
+                                                        <option select>Standard</option>
+                                                        <option>Cash Contract</option>
+                                                        <option>Hard Currency Sale</option>
+                                                        <option>Step Up</option>
+                                                        <option>Facebook Connect</option>
+                                                        <option>Alternative Currency</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Offer Weight</label>
+                                                    <input class="form-control" value="100" />
+                                                </div>
+                                                <div class="col-md-12"></div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Offer Section</label>
+                                                    <select class="form-select">
+                                                        <option selected>R37_Section_Enhance_Superstar</option>
+                                                        <option>Section_Starter_Pack</option>
+                                                        <option>Section_LTEs</option>
+                                                        <option>Section_Daily_Deals</option>
+                                                        <option>Section_Champions_Club</option>
+                                                        <option>Section_Shane_O_Mac</option>
+                                                        <option>R37_Section_Charging</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Combo Type</label>
+                                                    <select class="form-select">
+                                                        <option selected>combo 1</option>
+                                                        <option>combo 2</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <label class="form-label">Global Offer</label>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" checked />
+                                                        <label class="form-label">Enable</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12"></div>
+                                                <!-- Schedule-->
+                                                <div class="col-md-5">
+                                                    <label class="form-label">Schedule</label>
+                                                    <div class="input-group">
+                                                        <input class="form-control" disabled value="MM/DD/YYYY HH:MM - MM/DD/YYYY HH:MM" />
+                                                        <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-1 align-self-end"><input class="btn btn-primary btn-offer-predict" type="button" value="Create / Edit" data-bs-toggle="modal" data-bs-target="#scheduleCreateModal" /></div>
+                                                <div class="col-md-6"></div>
+                                                <!-- Art preview-->
+                                                <div class="col-md-6">
+                                                    <div class="row">
+                                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
+                                                            <label class="form-label">Store Image ID</label>
+                                                            <select class="form-select">
+                                                                <option>Select an asset</option>
+                                                                <option selected>UI/Tokens/UI_Token_Red_Sec_01</option>
+                                                                <option>UI/StoreV1/UI_Token_Purple_Sec_01</option>
+                                                                <option>UI/StoreV2/OfferImages/More_Items</option>
+                                                                <option>UI/Tokens/UI_Token_Black_Sec_01</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
+                                                            <label class="form-label">Store Image Name</label>
+                                                            <select class="form-select">
+                                                                <option>Select a localization</option>
+                                                                <option selected>!!BLANK</option>
+                                                                <option>Buy now(!!BUTTON_BUYNOW)</option>
+                                                                <option>Cancel(!!BUTTON_CANCEL)</option>
+                                                                <option>BUY AGAIN!(!!BUTTON_BUYAGAIN)</option>
+                                                                <option>OK!(!!BUTTON_OK)</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
+                                                            <label class="form-label">Store Image Description</label>
+                                                            <select class="form-select">
+                                                                <option>Select a localization</option>
+                                                                <option>!!BLANK</option>
+                                                                <option selected>Buy now(!!BUTTON_BUYNOW)</option>
+                                                                <option>Cancel(!!BUTTON_CANCEL)</option>
+                                                                <option>BUY AGAIN!(!!BUTTON_BUYAGAIN)</option>
+                                                                <option>OK!(!!BUTTON_OK)</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6"></div>
+                                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
+                                                            <label class="form-label">Description</label>
+                                                            <select class="form-select">
+                                                                <option>Select a localization</option>
+                                                                <option>!!BLANK</option>
+                                                                <option>Buy now(!!BUTTON_BUYNOW)</option>
+                                                                <option selected>Cancel(!!BUTTON_CANCEL)</option>
+                                                                <option>BUY AGAIN!(!!BUTTON_BUYAGAIN)</option>
+                                                                <option>OK!(!!BUTTON_OK)</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6"></div>
+                                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
+                                                            <label class="form-label">Background Image ID</label>
+                                                            <select class="form-select">
+                                                                <option>Select a background</option>
+                                                                <option>UI/StoreV2/OfferBGs/Offer_Single3_WT0922_Show_Blank_Premium</option>
+                                                                <option>UI/StoreV2/OfferBGs/Offer_Prizewall_WMU_Premium</option>
+                                                                <option selected>UI/StoreV2/OfferBGs/Offer_Banner_MOTU_UniCol_Pack_Jumpstart_100</option>
+                                                                <option>UI/StoreV2/OfferBGs/Offer_Banner_JohnnyGargano_Event</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
+                                                            <label class="form-label">Background Image Description</label>
+                                                            <select class="form-select">
+                                                                <option>Select a localization</option>
+                                                                <option>!!BLANK</option>
+                                                                <option>Buy now(!!BUTTON_BUYNOW)</option>
+                                                                <option>Cancel(!!BUTTON_CANCEL)</option>
+                                                                <option selected>BUY AGAIN!(!!BUTTON_BUYAGAIN)</option>
+                                                                <option>OK!(!!BUTTON_OK)</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <label class="form-label">Image Preview</label>
+                                                    <img class="img-thumbnail" src="assets/img/Ad_Sociall9l-768x402.png" />
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-md-1 align-self-end"><input class="btn btn-primary btn-offer-predict" type="button" value="Create / Edit" data-bs-toggle="modal" data-bs-target="#scheduleCreateModal" /></div>
-                                <div class="col-md-6"></div>
-                                <!-- Art preview-->
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
-                                            <label class="form-label">Store Image ID</label>
-                                            <select class="form-select">
-                                                <option selected>Select an asset</option>
-                                                <option>UI/Tokens/UI_Token_Red_Sec_01</option>
-                                                <option>UI/Tokens/UI_Token_Purple_Sec_01</option>
-                                                <option>UI/Tokens/UI_Token_Black_Sec_01</option>
-                                                <option>UI/StoreV2/OfferImages/More_Items</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
-                                            <label class="form-label">Store Image Name</label>
-                                            <select class="form-select">
-                                                <option selected>Select a localization</option>
-                                                <option>!!BLANK</option>
-                                                <option>Buy now(!!BUTTON_BUYNOW)</option>
-                                                <option>Cancel(!!BUTTON_CANCEL)</option>
-                                                <option>BUY AGAIN!(!!BUTTON_BUYAGAIN)</option>
-                                                <option>OK!(!!BUTTON_OK)</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
-                                            <label class="form-label">Store Image Description</label>
-                                            <select class="form-select">
-                                                <option selected>Select a localization</option>
-                                                <option>!!BLANK</option>
-                                                <option>Buy now(!!BUTTON_BUYNOW)</option>
-                                                <option>Cancel(!!BUTTON_CANCEL)</option>
-                                                <option>BUY AGAIN!(!!BUTTON_BUYAGAIN)</option>
-                                                <option>OK!(!!BUTTON_OK)</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6"></div>
-                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
-                                            <label class="form-label">Description</label>
-                                            <select class="form-select">
-                                                <option selected>Select a localization</option>
-                                                <option>!!BLANK</option>
-                                                <option>Buy now(!!BUTTON_BUYNOW)</option>
-                                                <option>Cancel(!!BUTTON_CANCEL)</option>
-                                                <option>BUY AGAIN!(!!BUTTON_BUYAGAIN)</option>
-                                                <option>OK!(!!BUTTON_OK)</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6"></div>
-                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
-                                            <label class="form-label">Background Image ID</label>
-                                            <select class="form-select">
-                                                <option>Select a background</option>
-                                                <option>UI/StoreV2/OfferBGs/Offer_Single3_WT0922_Show_Blank_Premium</option>
-                                                <option>UI/StoreV2/OfferBGs/Offer_Prizewall_WMU_Premium</option>
-                                                <option selected>UI/StoreV2/OfferBGs/Offer_Banner_MOTU_UniCol_Pack_Jumpstart_100</option>
-                                                <option>UI/StoreV2/OfferBGs/Offer_Banner_JohnnyGargano_Event</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6" style="margin-top: 12px; margin-bottom: 8px">
-                                            <label class="form-label">Background Image Description</label>
-                                            <select class="form-select">
-                                                <option selected>Select a localization</option>
-                                                <option>!!BLANK</option>
-                                                <option>Buy now(!!BUTTON_BUYNOW)</option>
-                                                <option>Cancel(!!BUTTON_CANCEL)</option>
-                                                <option>BUY AGAIN!(!!BUTTON_BUYAGAIN)</option>
-                                                <option>OK!(!!BUTTON_OK)</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label">Image Preview</label>
-                                    <img class="img-thumbnail" src="assets/img/Ad_Sociall9l-768x402.png" />
                                 </div>
                             </form>
                         </div>
@@ -627,5 +560,6 @@
         <script src="js/scripts.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script src="js/collapse.js"></script>
     </body>
 </html>
