@@ -1,0 +1,15 @@
+
+include items-dropdown.pug
+include assets-dropdown.pug
+
+mixin item-bundle(itemID, assetID, value, disabled=false)
+    .col-md-5
+        +items-dropdown(itemID, disabled)
+    .col-md-2
+        input.form-control(type="number", min="1", max="10000", value=value, disabled=disabled)
+    .col-md-4
+        +assets-dropdown(assetID, disabled)
+    .col-md-1
+        .button.btn.btn-danger.btn-offer-predict(style="width:fit-content", hidden=disabled)
+            i.fas.fa-trash
+    .col-md-12(style="height:0.5rem")

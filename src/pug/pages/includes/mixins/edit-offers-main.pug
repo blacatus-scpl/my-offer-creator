@@ -1,0 +1,33 @@
+include segments-dropdown.pug
+include item-bundle.pug
+
+mixin edit-offers-main(predictRedirect, segmentID=0, itemID=0, itemAmount='')
+    .col-md-3
+        label.form-label Offer ID
+        input.form-control(value="OFFER_WXYZ_NOV_2022")
+    .col-md-3
+        label.form-label Platform
+        select.form-select
+            option(selected) Mobile 
+            option Web
+            option Both
+    .col-md-3
+        label.form-label Gate ID
+        select.form-select
+            option(selected) Select a gate
+            option r50_staging
+            option r45_liveops
+            option r45_live
+            option r50_development
+
+    .col-md-12
+
+    // Edit offers single
+    .col-md-9
+        label.form-label Main Items
+        .row(style="margin:1rem")
+            form.row.g-3
+                +item-bundle(itemID, itemID, itemAmount)
+                .col(style='flex-grow:1')
+                    .input.btn.btn-secondary Add
+    .col-md-12

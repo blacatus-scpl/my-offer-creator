@@ -4,7 +4,7 @@ mixin batch-datatable(predictions)
         include bundles-dropdown.pug
         include prices-dropdown.pug
 
-        mixin table-line(id, price, value, bundleID)
+        mixin table-line(id, price, value, bundleID, items=[], disabledItems=[])
             tr
                 th
                     input.form-check-input(type='checkbox')
@@ -16,12 +16,15 @@ mixin batch-datatable(predictions)
                     +prices-dropdown(price)
                 th 
                     =value
-                th
+                th(style="width:40%")
                     .row
-                        .col-md-10
-                            +bundles-dropdown(bundleID)
-                        .col-md-2
-                            input.btn.btn-primary.btn-offer-predict(type='button', value='Edit', data-bs-toggle="modal" data-bs-target="#bundleCreateModal")
+                        form.row.g-3
+                            each val in disabledItems
+                                +item-bundle(val, val, 1, true)
+                            each val in items
+                                +item-bundle(val, val, 1)
+                        .col(style='flex-grow:1')
+                            .input.btn.btn-secondary Add
         thead
             tr
                 th
@@ -40,15 +43,15 @@ mixin batch-datatable(predictions)
                 th Items
         tbody
             if predictions
-                +table-line("Dolphins", "$49.99", "$100.00", 1)
-                +table-line("Tuna", "$24.99", "$30.00", 2)
-                +table-line("Nemo", "$10.99", "$20.00", 3)
-                +table-line("Dory", "$0.99", "$5.00", 4)
+                +table-line("Dolphins", "$49.99", "$100.00", 1, [2, 3, 4], [1])
+                +table-line("Tuna", "$24.99", "$30.00", 2, [2, 3], [1])
+                +table-line("Nemo", "$10.99", "$20.00", 3, [2], [1])
+                +table-line("Dory", "$0.99", "$5.00", 4, [], [1])
             else 
                 +table-line("Dolphins", "", "$0.00", 0)
                 +table-line("Tuna", "", "$0.00", 0)
                 +table-line("Nemo", "", "$0.00", 0)
-                +table-line("Dory", "", "$.00", 0)
+                +table-line("Dory", "", "$0.00", 0)
 
             tr(style="background-color:#e9ecef;border-top-width:2px")
                 th(colspan="100%")

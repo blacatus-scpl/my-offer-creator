@@ -1,6 +1,6 @@
 
-mixin items-dropdown(selectedID)
-    select.form-select
+mixin items-dropdown(selectedID, disabled=false)
+    select.form-select(disabled=disabled)
         option(selected=(selectedID==0)) Select an item
         option(selected=(selectedID==1)) Currency ABCDE
         option(selected=(selectedID==2)) Item FGHJK
