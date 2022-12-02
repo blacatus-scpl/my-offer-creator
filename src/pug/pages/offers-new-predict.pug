@@ -10,41 +10,51 @@ block content
     .container-fluid.px-4
         include includes/page-header.pug
         include includes/mixins/segments-dropdown.pug
+        include includes/mixins/item-bundle.pug
         include includes/mixins/backgrounds-dropdown.pug
-        include includes/mixins/bundles-dropdown.pug
         include includes/mixins/prices-dropdown.pug
-        include includes/modals/bundle-creation.pug
+        include includes/mixins/edit-offers-main.pug
+        include includes/mixins/edit-offers-advanced.pug
         include includes/modals/schedule-creation.pug
 
         .row 
             form.row.g-3
                 // Edit offers main data
-                include includes/edit-offers-main
+                +edit-offers-main('offers-new-predict.html', 1, 1, 1)
 
-                // Edit offers single
                 .col-md-3
                     label.form-label Segment ID
                     +segments-dropdown(1)
                 .col-md-1.align-self-end
-                    a(href='offers-new-predict.html')
+                    a(href="offers-new-predict.html")
                         input.btn.btn-primary.btn-offer-predict(type='button', value='Predict')
-                .col-md-2 
-                    label.form-label Price SKU
-                    +prices-dropdown(1)
-                .col-md-3
-                    label.form-label Item Bundle ID
-                    +bundles-dropdown(1)
-                .col-md-1.align-self-end
-                    input.btn.btn-primary.btn-offer-predict(type='button', value="Edit", data-bs-toggle="modal" data-bs-target="#bundleCreateModal")
-                .col-md-2
-                .col-md-2
-                    label.form-label Value
-                    .input-group
-                        input.form-control(disabled, value="$ 100.00")
-                .col-md-10
+                .col-md-12
 
-                // Edit offers secondary data
-                include includes/edit-offers-secondary.pug
+                .col-md-12
+                    .div(style="margin:3rem;padding:1rem;border:1px solid black")
+                        .row 
+                            form.row.g-3
+                                .col-md-2 
+                                    label.form-label Price SKU
+                                    +prices-dropdown(1)
+                                .col-md-2
+                                    label.form-label Value
+                                    .input-group
+                                        input.form-control(disabled, value="$ 100.00")
+                                .col-md-12(style="margin-bottom:1rem")
+
+                                label.form-label Offer items
+                                .row(style="margin:1rem")
+                                    form.row.g-3
+                                        +item-bundle(1, 1, 1, true)
+                                        +item-bundle(2, 2, 1)
+                                        +item-bundle(3, 3, 50)
+                                    .col(style='flex-grow:1')
+                                        .input.btn.btn-secondary Add
+
+                // Edit advanced collapsible data
+                .div(style="margin-top:1rem")
+                    +edit-offers-advanced
 
                 // Create offer button
                 .row
@@ -52,3 +62,6 @@ block content
                         a(href='offers-with-new.html')
                             input.btn.btn-success.btn-offer-predict(type='button', value='Create Offer', style="margin-top: 10px; margin-bottom: 10px")
 
+append scripts
+    //- Load Collapse Scripts
+    script(src='js/collapse.js')

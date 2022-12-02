@@ -14,21 +14,23 @@ block content
     .container-fluid.px-4
         include includes/page-header.pug
         include includes/modals/schedule-creation.pug
-        include includes/modals/bundle-creation.pug
         include includes/mixins/batch-datatable.pug
+        include includes/mixins/item-bundle.pug
+        include includes/mixins/edit-offers-main.pug
+        include includes/mixins/edit-offers-advanced.pug
         
         // Common fields
-        .row 
+        .row
             form.row.g-3
-                include includes/edit-offers-main.pug
+                +edit-offers-main("offers-batch-predict.html", 1, 1, 1)
 
                 // Datatable
-                .col-md-12
+                .col-md-12(style="margin-top:2rem")
                     .card.mb-4
                         .card-body
                             +batch-datatable(true)
 
-                include includes/edit-offers-secondary.pug
+                +edit-offers-advanced(true)
 
         // Create offer button
         .row
@@ -40,3 +42,4 @@ append scripts
     //- Load Simple DataTables Scripts
     script(src='https://cdn.jsdelivr.net/npm/simple-datatables@latest', crossorigin='anonymous')
     script(src='js/datatables-simple-demo.js')
+    script(src='js/collapse.js')

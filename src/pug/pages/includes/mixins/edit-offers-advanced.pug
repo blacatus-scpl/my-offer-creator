@@ -1,0 +1,97 @@
+
+include backgrounds-dropdown.pug
+include localizations-dropdown.pug
+
+mixin edit-offers-advanced(showSegments=false)
+    .div
+        .button.collapsible Open advanced settings
+        .div.content
+            .row
+                form.row.g-3
+                    if showSegments
+                        .col-md-2
+                            label.form-label Offer
+                            select.form-select(disabled=disabled)
+                                option(selected=true) Dolphins
+                                option Tuna
+                                option Nemo
+                                option Dory
+                        .col-md-12
+
+                    .col-md-2
+                        label.form-label Stock
+                        input.form-control(type="number", min="1", max="10000", value="100")
+
+                    .col-md-2
+                        label.form-label Offer Type
+                        select.form-select
+                            option(select) Standard
+                            option Cash Contract
+                            option Hard Currency Sale
+                            option Step Up
+                            option Facebook Connect
+                            option Alternative Currency
+                    .col-md-2
+                        label.form-label Offer Weight
+                        input.form-control(value="100")
+                    .col-md-12
+
+                    .col-md-2
+                        label.form-label Offer Section
+                        select.form-select
+                            option(selected) R37_Section_Enhance_Superstar
+                            option Section_Starter_Pack
+                            option Section_LTEs
+                            option Section_Daily_Deals
+                            option Section_Champions_Club
+                            option Section_Shane_O_Mac
+                            option R37_Section_Charging
+                    .col-md-2
+                        label.form-label Combo Type
+                        select.form-select
+                            option(selected) combo 1
+                            option combo 2
+                    .col-md-2
+                        label.form-label Global Offer
+                        .form-check.form-switch
+                            input.form-check-input(type="checkbox", role="switch", checked=true)
+                            label.form-label Enable
+                    .col-md-12
+
+                    // Schedule
+                    .col-md-5
+                        label.form-label Schedule
+                        .input-group
+                            input.form-control(disabled, value="MM/DD/YYYY HH:MM - MM/DD/YYYY HH:MM")
+                            span.input-group-text
+                                i.fas.fa-calendar
+                    .col-md-1.align-self-end
+                        input.btn.btn-primary.btn-offer-predict(type='button', value='Create / Edit', data-bs-toggle="modal" data-bs-target="#scheduleCreateModal")
+                    .col-md-6
+
+                    // Art preview
+                    .col-md-6
+                        .row
+                            .col-md-6(style="margin-top: 12px; margin-bottom:8px")
+                                label.form-label Store Image ID
+                                +assets-dropdown(1)
+                            .col-md-6(style="margin-top: 12px; margin-bottom:8px")
+                                label.form-label Store Image Name
+                                +localizations-dropdown(1)
+                            .col-md-6(style="margin-top: 12px; margin-bottom:8px")
+                                label.form-label Store Image Description
+                                +localizations-dropdown(2)
+                            .col-md-6
+                            .col-md-6(style="margin-top: 12px; margin-bottom:8px")
+                                label.form-label Description
+                                +localizations-dropdown(3)
+                            .col-md-6
+                            .col-md-6(style="margin-top: 12px; margin-bottom:8px")
+                                label.form-label Background Image ID
+                                +backgrounds-dropdown(3)
+                            .col-md-6(style="margin-top: 12px; margin-bottom:8px")
+                                label.form-label Background Image Description
+                                +localizations-dropdown(4)
+                    .col-md-3
+                        label.form-label Image Preview
+                        img(src="assets/img/Ad_Sociall9l-768x402.png" class="img-thumbnail")
